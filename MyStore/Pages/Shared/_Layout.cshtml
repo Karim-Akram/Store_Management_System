@@ -7,6 +7,30 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/MyStore.styles.css" asp-append-version="true" />
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            padding: 20px;
+        }
+
+        h2 {
+            color: #007bff;
+        }
+
+        .btn-sim {
+            margin-right: 5px;
+        }
+
+        .alert {
+            margin-top: 10px;
+        }
+
+        .form-control {
+            margin-bottom: 10px;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -24,6 +48,9 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Clients/Index">Clients</a>
                         </li>
                     </ul>
                 </div>

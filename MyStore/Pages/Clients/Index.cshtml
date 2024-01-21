@@ -1,0 +1,92 @@
+﻿@page
+@model MyStore.Pages.Clients.IndexModel
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>List Of Clients</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            padding: 20px;
+        }
+
+        h2 {
+            color: #007bff;
+        }
+
+        .btn-sim {
+            margin-right: 5px;
+        }
+
+        table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+        }
+
+            table th, table td {
+                border: 1px solid #dee2e6;
+                padding: 8px;
+                text-align: left;
+            }
+
+            table th {
+                background-color: white;
+                color: #007bff;
+            }
+
+        tbody tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        .btn-delete {
+            background-color: #dc3545;
+            color: white;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>List Of Clients</h2>
+    <a class="btn btn-primary btn-sim" href="/Clients/Create">New Client</a>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Address</th>
+                <th>Created At</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.ListClients)
+            {
+                <tr>
+                    <td>@item.id</td>
+                    <td>@item.name</td>
+                    <td>@item.email</td>
+                    <td>@item.phone</td>
+                    <td>@item.address</td>
+                    <td>@item.created_at</td>
+                    <td class="action-buttons">
+                        <a class="btn btn-primary btn-sim" href="/Clients/Edit?id=@item.id">Edit</a>
+                        <a class="btn btn-delete btn-sim" href="/Clients/Delete?id=@item.id">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</body>
+</html>
